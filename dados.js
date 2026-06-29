@@ -30,6 +30,53 @@ const receitas = [
         ]
 
     },
+{
+    titulo: "Bolo de Limão Siciliano com Mirtilos",
+    descricao: "Bolo fofinho de limão siciliano com mirtilos, recheado com creme de cream cheese e chantilly.",
+
+    imagem: "imgs/bololimao.jpg",
+
+    ingredientes: [
+        "Para a massa:",
+        "1 e 1/2 xícara de açúcar refinado",
+        "Raspas de 2 limões sicilianos",
+        "200g de manteiga sem sal",
+        "3 ovos",
+        "260ml de leite integral",
+        "70ml de suco de limão siciliano",
+        "2 xícaras de farinha de trigo",
+        "1 colher de sopa de fermento em pó",
+        "1 xícara de mirtilos",
+
+        "Para o recheio:",
+        "2 latas de leite condensado",
+        "2 caixinhas de creme de leite",
+        "300g de cream cheese",
+        "300g de nata ou chantilly batido em ponto firme"
+    ],
+
+    passos: [
+        "Preaqueça o forno a 180°C e forre o fundo de duas formas de 18cm com papel manteiga.",
+        "Misture o açúcar com as raspas dos limões sicilianos até liberar todo o aroma.",
+        "Adicione a manteiga e bata até obter um creme claro e fofo.",
+        "Acrescente os ovos, um de cada vez, batendo bem após cada adição.",
+        "Misture o leite com o suco de limão siciliano.",
+        "Alterne a adição da farinha de trigo com a mistura de leite, mexendo até incorporar.",
+        "Adicione o fermento em pó e misture delicadamente.",
+        "Por último, incorpore os mirtilos com cuidado para não amassar.",
+        "Divida a massa igualmente entre as duas formas.",
+        "Asse por aproximadamente 40 minutos ou até que um palito saia limpo.",
+        "Retire do forno, deixe esfriar completamente e corte cada bolo ao meio, formando quatro camadas.",
+
+        "Para o recheio, prepare um brigadeiro branco misturando o leite condensado e o creme de leite até atingir ponto cremoso. Deixe esfriar completamente.",
+        "Misture o cream cheese ao brigadeiro já frio até obter um creme homogêneo.",
+        "Incorpore delicadamente a nata ou o chantilly batido em ponto firme.",
+
+        "Monte o bolo alternando camadas de massa e recheio.",
+        "Finalize cobrindo todo o bolo com o restante do creme e decore como preferir.",
+        "Leve à geladeira por pelo menos 2 horas antes de servir."
+    ]
+},
     {
     titulo: "Bolo Charlotte",
     descricao: "Clássico natalino com pão de ló, geleia de frutas vermelhas e creme branco.",
