@@ -6,20 +6,30 @@ const receita = receitas.find(r => r.titulo === titulo);
 
 const container = document.getElementById("detalhes");
 
+const voltar = `<a href="index.html" class="voltar">← Voltar às receitas</a>`;
+
 if (receita) {
     container.innerHTML = `
+    ${voltar}
     <h1>${receita.titulo}</h1>
 
-    <img src="${receita.imagem}" style="width:300px;border-radius:10px;">
+    <p class="descricao">${receita.descricao}</p>
 
-    <p>${receita.descricao}</p>
+    <div class="receita-topo">
+        <img src="${receita.imagem}" alt="${receita.titulo}">
 
-    ${receita.ingredientes ? `
-        <h2>Ingredientes</h2>
-        <ul>
-            ${receita.ingredientes.map(i => `<li>${i}</li>`).join("")}
-        </ul>
-    ` : ""}
+        ${receita.ingredientes ? `
+        <div>
+            <h2>Ingredientes</h2>
+            <ul class="ingredientes-lista">
+                ${receita.ingredientes.map(i => i.trim().endsWith(":")
+                    ? `<li class="subtitulo">${i}</li>`
+                    : `<li>${i}</li>`
+                ).join("")}
+            </ul>
+        </div>
+        ` : ""}
+    </div>
 
     ${receita.passos ? `
         <h2>Modo de Preparo</h2>
@@ -34,5 +44,5 @@ if (receita) {
     ` : ""}
 `;
 } else {
-    container.innerHTML = "<p>Receita não encontrada.</p>";
+    container.innerHTML = `${voltar}<p>Receita não encontrada.</p>`;
 }

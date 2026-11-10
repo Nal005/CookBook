@@ -7,7 +7,7 @@
     background-attachment: fixed;
     display:flex;
     flex-direction: column;
-    height:100vh;
+    min-height:100vh;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
@@ -18,7 +18,7 @@
     background-attachment: fixed;
     display:flex;
     flex-direction: column;
-    height:100vh;
+    min-height:100vh;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
@@ -29,7 +29,7 @@
     background-attachment: fixed;
     display:flex;
     flex-direction: column;
-    height:100vh;
+    min-height:100vh;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
@@ -55,24 +55,39 @@ nav ul {
     list-style: none;
     padding: 0;
     margin-top: 20px;
+    font-size: 1.2rem;
 }
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 4px 8px;
 }
 nav a {
+    display: inline-block;
     text-decoration: none;
     font-weight: bold;
     color: rgb(107, 24, 2);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: 0.2s;
 }
-.container p, ul{
+nav a:hover {
+    background: rgb(149, 52, 26);
+    color: white;
+}
+.container p, .container ul{
     margin-top: 10px;
     font-size: 1.5rem;
+}
+
+main {
+    flex: 1;
 }
 
 footer{
     color: rgb(72, 35, 2);
     text-align: center;
+    padding: 20px;
 }
 
 /* SOBRE */
@@ -100,13 +115,24 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Form elements do not inherit the font by default */
+input, button {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
 .container {
     padding: 70px;
 }
 
+.titulo-receitas {
+    text-align: center;
+    margin: 0 0 30px;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 h1{
@@ -121,6 +147,9 @@ h1{
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
     transform: rotate(var(--angle));
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 .card:nth-child(3n+1) {
     --angle: -2deg;
@@ -164,6 +193,9 @@ h1{
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    /* Push the button to the bottom so all cards align */
+    margin-top: auto;
+    align-self: center;
 }
 
 .card button:hover {
@@ -180,7 +212,7 @@ h1{
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(244, 164, 135, 0.2);
     margin-bottom: 10px;
     padding: 12px 15px;
     border-radius: 12px;
@@ -209,9 +241,53 @@ h1{
 }
 
 .receita-container img {
+    display: block;
     width: 100%;
     border-radius: 15px;
     margin-bottom: 20px;
+}
+
+.voltar {
+    display: inline-block;
+    color: rgb(149, 52, 26);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+/* Photo next to the ingredients */
+.receita-topo {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.receita-topo h2 {
+    margin-top: 0;
+}
+
+.ingredientes-lista {
+    color: rgb(107, 24, 2);
+    padding-left: 20px;
+    margin: 0;
+}
+
+.ingredientes-lista li {
+    margin-bottom: 6px;
+}
+
+.ingredientes-lista .subtitulo {
+    list-style: none;
+    font-weight: 600;
+    margin: 14px 0 6px -20px;
+}
+
+.ingredientes-lista .subtitulo:first-child {
+    margin-top: 0;
 }
 
 
@@ -246,7 +322,7 @@ h1{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -373,7 +449,7 @@ h1{
 }
 .home-content {
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
 }
@@ -422,4 +498,20 @@ h1{
     background: rgba(255, 255, 255, 0.6);
     padding: 20px;
     border-radius: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .receita-container {
+        margin: 20px 16px;
+    }
+
+    .receita-topo {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
